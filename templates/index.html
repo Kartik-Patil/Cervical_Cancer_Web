@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cervical-cancer-awareness</title>
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    </head>
+<body>
+    
+    <header>
+        <div class="navbar" >
+            <div class="nav-logo border">
+                <div class="logo">
+    <img src="https://www.shutterstock.com/image-vector/cervical-cancer-awareness-month-observed-600nw-2394733237.jpg"  class="logo">
+                </div>
+            </div>
+           
+            <div class="location border">
+                <a  href="#home">HOME</a>
+            </div>
+    
+            <div class="nav-signin border">
+                <a href="{{ url_for('symptoms') }}">SYMPTOMS</a>
+            </div>
+    
+            <div class="nav-return border">
+                <a href="{{ url_for('contact') }}">CONTACT</a>
+            </div>
+    
+            <div class="nav-cart border">
+                <a href="{{ url_for('faqs') }}">FAQ's</a>  <!-- ✅ Fixed link -->
+            </div>
+        </div>
+        
+        <!-- <a href="index1.html"> go to index.html</a> -->
+        <div class="image-container" id="home">
+            <img class="full" src="https://ecobgyn.org/wp-content/uploads/2024/01/Essex-County-OB-GYN-Blog-Banners-September-2023-3.png" alt="Cervical Cancer Awareness">
+            <div class="text-overlay">
+                <h2>Cervical Cancer Awareness</h2>
+                <p>
+                    Cervical cancer continues to be a global health challenge, with over 660,000 new cases and 
+                    350,000 deaths in 2022. The disease is most common in low-income regions due to limited 
+                    screening and vaccination access. Advances in HPV vaccination have significantly reduced 
+                    cervical cancer rates, especially in younger women.
+                </p>
+                <div class="image-uploader">
+                    <label for="fileUpload">Upload Image:</label>
+                    <input type="file" id="fileUpload" accept="image/*">
+                    <img id="previewImage" src="" alt="Uploaded Image">
+                    <button id="submitBtn" style="margin-top:10px;">Submit</button>
+                </div>
+                <div class="result" id="result">Processing result...</div>
+                
+                
+            </div>
+        </div>
+        <!-- home page done  -->
+        <div class="section">
+            <h1 class="heading">   Let's Talk Statistics</h1>
+        </div>
+        
+        <div class="container">
+            <!-- First Row: Text Left, Image Right -->
+            <div class="row">
+                <div class="text">
+                    <h3>World Cervical Cancer Incidence Rates</h3>
+                    <p>
+                        Cervical cancer continues to be a global health challenge, with over 660,000 new cases and 
+                        350,000 deaths in 2022. The disease is most common in low-income regions due to limited 
+                        screening and vaccination access. Advances in HPV vaccination have significantly reduced 
+                        cervical cancer rates, especially in younger women.
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="{{ url_for('static', filename='images/1graph.png') }}" alt="Cervical Cancer Awareness">
+
+                </div>
+            </div>
+        
+            <!-- Second Row: Image Left, Text Right -->
+            <div class="row">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='images/2.png') }}" alt="Cervical Cancer Awareness">
+
+                </div>
+                <div class="text">
+                    <h2>Cervical Cancer Frequency</h2>
+                    
+                    <p>
+                        According to WHO Cervical cancer is the most frequent cancer among women, impacting 2.1 million women each year, and also causes the greatest number of cancer-related deaths among women. In 2018, it is estimated that 627,000 women died from cervical cancer – that is approximately 15% of all cancer deaths among women.
+                    </p>
+                </div>
+            </div>
+        </div>      
+        </div>
+        <div class="slideshow-container">
+        
+            <!-- Slide 1 -->
+            <div class="slide fade" >
+                <div class="text-section">
+                    <h2 >Age increases the risk of cervical cancer</h2>
+                    <p>The older we are, the more likely abnormal changes will occur in our cells. 
+                       When many of these changes occur, cancer can develop.</p>
+                </div>
+                <div class="image-section">
+                    <img src="{{ url_for('static', filename='images/slide1.jpg') }}" alt="Cervical Cancer Awareness">
+
+                </div>
+            </div>
+    
+            <!-- Slide 2 -->
+            <div class="slide fade">
+                <div class="text-section">
+                    <h2>Cancer Mortality rate in Women</h2>
+                    <p>Cervical cancer ranks as the third leading cause of cancer-related deaths in women worldwide, claiming a significant number of lives annually. Preventive measures and early detection are crucial to reducing this alarming mortality rate..</p>
+                </div>
+                <div class="image-section">
+                    <img src="{{ url_for('static', filename='images/slide2.jpg') }}" alt="Cervical Cancer Awareness">
+
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide fade">
+                <div class="text-section">
+                    <h2>How to prevent cervical cancer?</h2>
+                    <p>Get regular screenings and HPV vaccination to lower your risk.</p>
+                </div>
+                <div class="image-section">
+                    <img src="{{ url_for('static', filename='images/slide1.jpg') }}" alt="Cervical Cancer Awareness">
+
+                    </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <!-- footer section  -->
+    <footer id="contact">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h3>About</h3>
+                <p>This site is made for the purpose of spreading awareness related to cervical cancer. This site is open source, and the source code can be found here.</p>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>    
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url_for('symptoms') }}">SYMPTOMS</a></li>  <!--...done  -->
+                    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+                    <li><a href="{{ url_for('faqs') }}">FAQ's</a></li>  <!-- ✅ CORRECT -->
+                </ul>
+            </div>
+            <!-- Social Media & Copyright -->
+            <div class="footer-section social" id="signin">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p> Rights Reserved by Cervical Cancer Awareness Program.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    
+    
+        
+
+        
+</body>
+</html>

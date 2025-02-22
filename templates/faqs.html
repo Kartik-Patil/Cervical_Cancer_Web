@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Cervical Cancer Awareness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #3b5a63;
+            color: rgb(255, 255, 255);
+            padding: 15px 20px;
+            text-align: left;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .faq-container {
+            width: 70%;
+            margin: 10px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+            text-align: center;
+        }
+
+        .faq {
+            /* border-bottom: 1px solid #c81b1b; */
+            padding: px 0;
+        }
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background: #e0e0e0;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .answer {
+            display: none;
+            padding: 10px;
+            color: #333;
+        }
+        .footer {
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .header a:hover {
+    color: #f4f4f4; /* Change to yellow on hover */
+}
+.header a{
+    color: white;
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <a  href="{{ url_for('home') }}">  Cervical Cancer Awareness</a>
+    </div>
+    
+    
+
+    <div class="faq-container">
+        <h2>FAQs</h2>
+        <div class="faq">
+            <button class="question">Q: What is cervical cancer?What is cervical cancer? <span class="toggle-symbol">+</span></button>
+            <div class="answer">Cervical cancer is a type of cancer that occurs in the cells of the cervix.</div>
+        </div>
+
+        <div class="faq">
+            <button class="question">Q: What causes cervical cancer?What causes cervical cancer? <span class="toggle-symbol">+</span></button>
+            <div class="answer">Cervical cancer is primarily caused by persistent infection with high-risk HPV (Human Papillomavirus).</div>
+        </div>
+
+        <div class="faq">
+            <button class="question">Q: What type of doctor should I see if I think I have cervical cancer?What type of doctor should I see if I think I have cervical cancer? <span class="toggle-symbol">+</span></button>
+            <div class="answer">You should consult a gynecologist or an oncologist specializing in cervical cancer.</div>
+        </div>
+
+        <div class="faq">
+            <button class="question">Q: What if I don’t want cancer treatment?What if I don’t want cancer treatment? <span class="toggle-symbol">+</span></button>
+            <div class="answer">Consult a doctor for alternative treatments and understand the consequences of avoiding treatment.</div>
+        </div>
+
+        <div class="faq">
+            <button class="question">Q: Will my Cervical cancer treatment affect my ability to have a baby?Will my Cervical cancer treatment affect my ability to have a baby? <span class="toggle-symbol">+</span></button>
+            <div class="answer">Some treatments, such as radiation or surgery, may impact fertility. Consult your doctor for fertility-preserving options.</div>
+        </div>
+
+        <div class="faq">
+            <button class="question">Q: Can physical activity reduce the risk of cervical cancerCan physical activity reduce the risk of cervical cancer <span class="toggle-symbol">-</span></button>
+            <div class="answer">Your medical provider can give guidance on what is best for your situation. This information does not constitute medical advice or diagnosis.</div>
+        </div>
+
+        <div class="faq">
+            <button class="question">Q: Can a healthy diet help to prevent cervical cancer?Can a healthy diet help to prevent cervical cancer? <span class="toggle-symbol" >+</span></button>
+            <div class="answer">A balanced diet rich in fruits, vegetables, and antioxidants may help reduce cancer risk.</div>
+        </div>
+
+        <div class="faq">
+            <button class="question">Q: Does a family history of cervical cancer put someone at a higher risk?Does a family history of cervical cancer put someone at a higher risk? <span class="toggle-symbol">+</span></button>
+            <div class="answer">A family history may slightly increase the risk, but HPV remains the primary cause of cervical cancer.</div>
+        </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright © 2025 Cervical Cancer Awareness Program</p>
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+        questions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                    this.querySelector("span").textContent = " /\  ";
+                } else {
+                    answer.style.display = "block";
+                    this.querySelector("span").textContent = " \/  ";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

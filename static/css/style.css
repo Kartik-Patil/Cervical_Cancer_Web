@@ -1,0 +1,534 @@
+*{
+    margin: 0;
+    border: border-box; 
+    font-family: arial;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    height: 60px;
+    background-color: #3b5a63;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+/* for position fixed  */
+.navbar {
+    position: fixed;  /* Fixes navbar position */
+    top: 0;           /* Sticks to the top */
+    left: 0;
+    width: 100%;      /* Full width */
+    background: #3b5a63; /* Dark background (change as needed) */
+    color: white;
+    padding: 1px 0;
+    z-index: 1000;    /* Keeps navbar above other content */
+}
+.nav-logo {
+    position: absolute;
+    left: 40px; /* Adjust as needed */
+}
+.nav-logo{
+    height: 50px;
+    width: 100px;
+
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 35rem;
+    max-width: 100%;
+}
+.section {
+    position: relative; /* Allows absolute positioning inside */
+    width: 100%;
+    height: 50px; /* Adjust height as needed */
+    /* background: linear-gradient(to right, #5cc3c6, #ffffff); Background color */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    text-align: center;
+}
+
+
+.heading {
+    font-size: 32px; /* Adjust size */
+    font-weight: bold;
+    color: #000; /* Adjust text color */
+    margin-top: 5%
+}
+
+.full {
+    width: 100%;
+    height: 40rem;
+    display: block;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 45%; /* Adjust width */
+    height: 17rem;
+    color: white; /* Text color */
+    background: rgba(0, 0, 0, 0.5); /* Dark background for readability */
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+/* 4th */
+/* General Styling */
+
+
+/* Container Styling */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: 0px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section (Text) */
+.left-section {
+    width: 50%;
+    padding: 20px;
+}
+
+.left-section h2 {
+    font-size: 24px;
+    color: #222;
+}
+
+.left-section p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Right Section (Image) */
+.right-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.right-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* Slideshow Container */
+.slideshow-container {
+    margin-left: 3rem;
+    position: relative;
+    width: 90%;
+    /* max-width: 900px; */
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* left image  */
+.image-uploader {
+    position: absolute;
+    top: 170px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.355);
+    padding: 10px;
+    margin-left: 130px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+/* navbar position fix  */
+/* .navbar {
+    position: fixed;  /
+    top: 0;          
+    left: 0;
+    width: 100%;   
+    background: #333; 
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;    
+} */
+
+
+.content {
+    width: 70%;
+    padding: 20px;
+}
+
+/* Slides */
+.slide {
+    display: none;
+    text-align: center;
+}
+
+/* Text and Image Sections */
+.text-section {
+    padding: 20px;
+}
+
+.image-section img {
+    width: 100%;
+    max-height: 31rem;
+    border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 0 5px 5px 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Fade Animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {opacity: 0.5}
+    to {opacity: 1}
+}
+
+/* symptoms */
+/* General Styling */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+} */
+
+/* Navbar */
+/* Symptoms Section */
+/* .symptoms-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.symptoms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.symptom {
+    background: #e0f2f1;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.symptom:hover {
+    transform: scale(1.05);
+}
+
+.symptom img {
+    width: 80px;
+    height: 80px;
+} */
+
+/* Footer */
+/* footer {
+    text-align: center;
+    padding: 15px;  
+    background: #004d40;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+} */
+
+
+/*  */
+.logo {
+  /* background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fcervical-cancer_9581994&psig=AOvVaw3QxbKLXAJBRwNiJNYitsb_&ust=1739971419676000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIiOifeozYsDFQAAAAAdAAAAABAJ); */
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+    margin-right: 60px;
+    background-color: #3b5a63 ;
+}
+
+.border {
+    border: 2px solid transparent;
+}
+
+.border:hover {
+    border: 1.5px solid white;
+}
+
+/** box 2 **/
+.first-class{
+    color: white;
+    font-size: 0.85rem;
+    margin-left: 15px;
+
+}
+
+.class:hover{
+    border: 1.5px solid white;
+}
+.second-class {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-left: 2px;
+}
+
+.nav-icon {
+    display: flex;
+}
+
+/* /box 3/ */
+.nav-search {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: pink;
+    width: 620px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between rows */
+    padding: 20px;
+}
+
+.row {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text {
+    width: 45%;
+    font-size: 18px;
+    color: #333;
+    padding: 20px;
+}
+
+.image {
+    width: 45%;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 8px; /* Optional for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #d0d4d7;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    margin-left: 3rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #222;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #555;
+    max-width: 300px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: #133559;
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.location a {
+    color: rgb(233, 233, 233); /* Change this to any color you want */
+}
+.nav-signin a {
+    color: #f8f9fa;
+}
+.nav-return a{
+    color: #f8f9fa;
+}
+.nav-cart a{
+    color: #f8f9fa;
+}
+.nav-auth a {
+    color: #f8f9fa;
+}
+
+.navbar a:hover{
+    color: #222;
+}
+/* faq .html */
+
+/* extra work  */
+/* General Styling */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+} */
+
+/* Navbar */
+.nav-links {
+    margin-left: 5rem;
+    list-style: none;
+    display: flex;
+    gap: 180px;
+    margin-left: 5rem;
+    height: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 1px;
+}
+
+.nav-links .active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+/* Symptoms Section */
+.symptoms-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.symptoms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.symptom {
+    background: #e0f2f1;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.symptom:hover {
+    transform: scale(1.05);
+}
+
+.symptom img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #d0d4d7;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 90%;
+}
+
+/* contact section  */

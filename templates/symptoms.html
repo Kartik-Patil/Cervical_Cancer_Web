@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms - Cervical Cancer Awareness</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<style>
+    header {
+        background-color: #3b5a63; /* Test background */
+        padding: 30px;
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('symptoms') }}" class="active">Symptoms</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('faqs') }}">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="symptoms-section">
+        <h2>Symptoms</h2>
+        <p>Different people have different symptoms of cervical cancer. Some may not show any signs at all.</p>
+        <div class="symptoms-container">
+            {% set symptom_images = {
+                "Leg pain (sharp or dull ache)": "p1.png",
+                "Swelling in the legs": "p2.png",
+                "Leakage of urine or feces": "p3.png",
+                "Fatigue": "p4.png",
+                "Back pain": "p5.png",
+                "Weight loss": "p6.png",
+                "Bone fractures": "p7.png",
+                "Difficulty urinating": "p8.png",
+                "Blood in the urine": "p9.png"
+            } %}
+            
+            {% for symptom in symptom_images.keys() %}
+            <div class="symptom">
+                <img src="{{ url_for('static', filename='images/' + symptom_images[symptom]) }}" alt="{{ symptom }}">
+                <p>{{ symptom }}</p>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cervical Cancer Awareness Program. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
